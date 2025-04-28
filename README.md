@@ -1,10 +1,10 @@
 
 # [Ezequiel] <img src="https://github.com/TheDudeThatCode/TheDudeThatCode/blob/master/Assets/Mario_Hello_Big.gif" width="30px">
 
-Eu sou <strong>Seu Nome</strong>, <strong>Faça uma breve apresentação aqui</strong> 👨🏻‍💻 
+Eu sou <strong>Arnott</strong>, <strong>Faça uma breve apresentação aqui</strong> 👨🏻‍💻 
 
 - 🚀 Atualmente estou aprendendo: <strong>JavaScript</strong> 
-- 💬 Pergunte-me sobre: <strong></strong>
+- 💬 Pergunte-me sobre: <strong>Minha sexualidade</strong>
 - 📣 Nós podemos falar em: <strong>Seus Idiomas</strong>
 
 <div align="center">
