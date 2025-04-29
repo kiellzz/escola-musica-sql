@@ -4,7 +4,7 @@
 Eu sou <strong>Arnott</strong>, <strong>Faça uma breve apresentação aqui</strong> 👨🏻‍💻 
 
 - 🚀 Atualmente estou aprendendo: <strong>JavaScript</strong> 
-- 💬 Pergunte-me sobre: <strong>Minha sexualidade</strong>
+- 💬 Pergunte-me sobre: <strong>Therian</strong>
 - 📣 Nós podemos falar em: <strong>Seus Idiomas</strong>
 
 <div align="center">
