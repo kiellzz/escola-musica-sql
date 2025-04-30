@@ -90,11 +90,21 @@ ALTER TABLE orquestra
 ADD COLUMN continente varchar(30);
 
 ALTER TABLE sinfonia
-DROP COLUMN continente; -- todas as sinfonias são europeias
+DROP COLUMN continente; -- todas as sinfonias registradas são europeias
 
 -- 3. SCRIPT DE DELETAÇÃO --
 
+SET SQL_SAFE_UPDATES = 0;
+
 SET FOREIGN_KEY_CHECKS = 0;
+
+DELETE FROM musico_funcao_apresentacao;
+DELETE FROM apresentacao;
+DELETE FROM sinfonia;
+DELETE FROM funcao;
+DELETE FROM instrumento;
+DELETE FROM musico;
+DELETE FROM orquestra;
 
 DROP TABLE IF EXISTS musico_Funcao_apresentacao;
 
@@ -110,13 +120,18 @@ DROP TABLE IF EXISTS orquestra;
 
 DROP TABLE IF EXISTS musico;
 
-DELETE FROM musico_funcao_apresentacao;
-DELETE FROM apresentacao;
-DELETE FROM sinfonia;
-DELETE FROM funcao;
-DELETE FROM instrumento;
-DELETE FROM musico;
-DELETE FROM orquestra;
+DROP VIEW IF EXISTS view_musicos_brasileiros;
+DROP VIEW IF EXISTS view_musicos_estrangeiros;
+DROP VIEW IF EXISTS view_musicos_sul_americanos;
+DROP VIEW IF EXISTS view_musicos_nao_sul_americanos;
+DROP VIEW IF EXISTS view_musicos_homens;
+DROP VIEW IF EXISTS view_musicos_mulheres;
+DROP VIEW IF EXISTS view_musico_instrumento;
+DROP VIEW IF EXISTS view_musico_orquestra;
+DROP VIEW IF EXISTS view_musico_mais_jovem;
+DROP VIEW IF EXISTS view_musico_mais_velho;
+DROP VIEW IF EXISTS view_orquestras_europeias;
+DROP VIEW IF EXISTS view_orquestras_nao_europeias;
 
 SET FOREIGN_KEY_CHECKS = 1;
 
@@ -310,42 +325,37 @@ WHERE a.data_apresentacao = (
     WHERE data_apresentacao >= CURDATE()
 );
 
--- 15. sinfonias da Alemanha --
-SELECT nome_sinfonia, data_criacao
-FROM sinfonia
-WHERE pais_sinfonia = 'Alemanha';
-
--- 16. músicos homens --
+-- 15. músicos homens --
 SELECT nome_musico, genero
 FROM musico
 WHERE genero = 'M';
 
--- 17. músicas mulheres --
+-- 16. músicas mulheres --
 SELECT nome_musico, genero
 FROM musico
 WHERE genero = 'F';
 
--- 18. músicos com identidade iniciada em número par --
+-- 17. músicos com identidade iniciada em número par --
 SELECT nome_musico, identidade
 FROM musico
 WHERE CAST(LEFT(identidade, 1) AS UNSIGNED) % 2 = 0;
 
--- 19, músicos com identidade iniciada em número ímpar --
+-- 18. músicos com identidade iniciada em número ímpar --
 SELECT nome_musico, identidade
 FROM musico
 WHERE CAST(LEFT(identidade, 1) AS UNSIGNED) % 2 != 0;
 
--- 20. orquestra mais antiga --
+-- 19. orquestra mais antiga --
 SELECT nome_orquestra, data_criacao
 FROM orquestra
 WHERE data_criacao = (SELECT MIN(data_criacao) FROM orquestra);
 
--- 21. orquestra mais nova --
+-- 20. orquestra mais nova --
 SELECT nome_orquestra, data_criacao
 FROM orquestra
 WHERE data_criacao = (SELECT MAX(data_criacao) FROM orquestra);
 
--- 22. músicos que tocaram sinfonias de Beethoven--
+-- 21. músicos que tocaram sinfonias de Beethoven--
 SELECT musico.nome_musico
 FROM musico
 JOIN musico_funcao_apresentacao mf ON musico.id_musico = mf.id_musico
@@ -356,7 +366,7 @@ WHERE a.id_sinfonia IN (
     WHERE compositor = 'Beethoven'
 );
 
--- 23. orquestra que toca sinfonia mais antiga --
+-- 22. orquestra que toca sinfonia mais antiga --
 SELECT orquestra.nome_orquestra, sinfonia.nome_sinfonia
 FROM orquestra
 JOIN apresentacao a ON orquestra.id_orquestra = a.id_orquestra
@@ -366,7 +376,7 @@ WHERE sinfonia.data_criacao = (
     FROM sinfonia
 );
 
--- 24. orquestra que toca sinfonia mais nova --
+-- 23. orquestra que toca sinfonia mais nova --
 SELECT orquestra.nome_orquestra, sinfonia.nome_sinfonia
 FROM orquestra
 JOIN apresentacao a ON orquestra.id_orquestra = a.id_orquestra
@@ -480,39 +490,4 @@ SELECT * FROM view_musico_mais_velho;
 
 SELECT * FROM view_orquestras_europeias;
 
-SELECT * FROM view_orquestras_nao_europeias;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+SELECT * FROM view_orquestras_nao_europeias
