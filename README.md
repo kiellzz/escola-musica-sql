@@ -1,11 +1,10 @@
 
 # [Ezequiel] <img src="https://github.com/TheDudeThatCode/TheDudeThatCode/blob/master/Assets/Mario_Hello_Big.gif" width="30px">
 
-Eu sou <strong>Arnott</strong>, <strong>Faça uma breve apresentação aqui</strong> 👨🏻‍💻 
+Olá, me chamo Ezequiel, sou aluno de ADS do senac, atualmente no segundo período, buscando sempre a evolução nas minhas habilidades como desenvolvedor e desenvolvimento pessoal 
 
-- 🚀 Atualmente estou aprendendo: <strong>JavaScript</strong> 
-- 💬 Pergunte-me sobre: <strong>Therian</strong>
-- 📣 Nós podemos falar em: <strong>Seus Idiomas</strong>
+- 🚀 Atualmente estou aprendendo: <strong>JavaScript, SQL, HTML/CSS</strong> 
+- 📣 Nós podemos falar em: <strong>Português e Inglês</strong>
 
 <div align="center">
 
