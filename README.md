@@ -1,6 +1,5 @@
 
-Olá, me chamo Ezequiel, sou aluno de ADS do senac, atualmente no terceiro período, buscando sempre a evolução nas minhas habilidades como pessoa e claro, como um desenvolvedor.
-
+Olá, me chamo Ezequiel, sou aluno de ADS do senac, atualmente no terceiro período, buscando sempre a evolução nas minhas habilidades como desenvolvedor, e também no desenvolvimento pessoal.
 - 🚀 Atualmente estou aprendendo: <strong>JavaScript, SQL, HTML/CSS</strong> 
 - 📣 Nós podemos falar em: <strong>Português e Inglês</strong>
 
